@@ -1,5 +1,9 @@
 ## PARDON: Privacy-Aware and Robust Federated Domain Generalization
 
+This is the offical implementation for __PARDON__ paper, accepted at ICDCS 2025 | [arxiv](https://arxiv.org/abs/2410.22622)
+
+*Authors*: Dung Thuy Nguyen, Taylor T. Johnson, Kevin Leach - Vanderbilt University
+
 *Abstract*: Privacy and enabling collaborative learning, most current solutions concentrate on private data collected from a single domain. Yet, a substantial performance degradation on unseen domains arises when data among clients is drawn from diverse domains (i.e., domain shift). However, existing Federated Domain Generalization (FedDG) methods are typically designed under the assumption that each client has access to the complete dataset of a single domain. This assumption hinders their performance in real-world FL scenarios, which are characterized by domain-based heterogeneity—where data from a single domain is distributed heterogeneously across clients—and client sampling, where only a subset of clients participate in each training round. In addition, certain methods enable information sharing among clients, raising privacy concerns as this information could be used to reconstruct sensitive private data. 
 To overcome this limitation, we present PARDON, a novel FedDG paradigm designed to robustly handle more complicated domain distributions between clients while ensuring security. PARDON facilitates client learning across domains by extracting an interpolative style from abstracted local styles obtained from each client and using contrastive learning. This approach provides each client with a multi-domain representation and an unbiased convergent target. Empirical results on multiple datasets, including PACS, Office-Home, and IWildCam, demonstrate PARDON’s superiority over state-of-the-art methods. Notably, our method outperforms SOTA techniques by a margin ranging from 3.64 to 57.22% in terms of accuracy on unseen domains.
 
