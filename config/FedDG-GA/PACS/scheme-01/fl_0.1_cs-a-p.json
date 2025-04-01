@@ -1,0 +1,23 @@
+{
+    "wandb_instance": "FedDG-GA-PACS--iid-0.1--baseline--cs-a-p-bz-32",
+    "group": "BASELINES_01_2_TRAIN_2_TEST",
+    "dataset": "PACS",
+    "log_path": "./log",
+    "data_path": "local/scratch/a/shared/",
+    "dataset_path": "local/scratch/a/shared/datasets/",
+    "seed": 8989,
+    "num_clients": 100,
+    "dataset_name": "PACS",
+    "server_method": "FedDGGA",
+    "client_method": "FedDGGAClient",
+    "start_epoch": 0,
+    "val": "True",
+    "id": 1,
+    "batch_size": 32,
+    "test_batch_size": 512,
+    "fixed_meta": "True",
+    "split_scheme": "cs-a-p",
+    "fraction": 0.2,
+    "num_rounds": 50,
+    "iid": 0.1
+}

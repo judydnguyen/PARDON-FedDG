@@ -1,0 +1,26 @@
+{
+    "num_clients": 243,
+    "dataset_name": "IWildCam",
+    "dataset": "IWildCam",
+    "wandb_instance": "FedTrans-IWildCam--iid-0.1-fraction-0.1-bz-32",
+    "group": "BASELINES_01_2_TRAIN_2_TEST",
+    "log_path": "./log",
+    "data_path": "local/scratch/a/shared/",
+    "dataset_path": "local/scratch/a/shared/datasets/",
+    "seed": 8989,
+    "start_epoch": 0,
+    "val": "True",
+    "output_size": 224,
+    "id": 1,
+    "server_method": "DGServer",
+    "client_method": "DGClient",
+    "batch_size": 32,
+    "test_batch_size": 1024,
+    "fraction": 0.1,
+    "optimizer": "torch.optim.Adam",
+    "optimizer_config": {
+        "lr": 3e-05
+    },
+    "num_rounds": 100,
+    "iid": 0.1
+}
