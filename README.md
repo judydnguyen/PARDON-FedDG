@@ -31,12 +31,12 @@ The checkpoints for pre-trained encoder and decoder for style transfer at [AdaIN
 
 Then, put `decoder.pth` and `vgg_normalized.pth` under `src/models/`.
 
-### Meta data (.csv) files are stored under each dataset folders
-Example: ```FISC-Fed-Domain-Generalization/local/scratch/a/shared/datasets/pacs_v1.0/cs-a-p.csv```
+### Meta data (.csv) files are stored under each dataset folder
+Example: ```./local/scratch/a/shared/datasets/pacs_v1.0/cs-a-p.csv```
 Please download original metadata file from repo [Benchmarking Algorithms for Domain Generalization in Federated Learning](https://github.com/inouye-lab/FedDG_Benchmark), or contact dung.t.nguyen@vanderbilt.edu if you have any problem downloading and processing the data.
 
 ### Prepare WanDB.
-First, please register an account on [WanDB](https://wandb.ai/). Then in wandb_env.py, fill in the entity name and the project name (You could name another name for your project).
+First, please register an account on [WanDB](https://wandb.ai/). Then, in wandb_env.py, fill in the entity name and the project name (You could name another something else for your project).
 The config can be modified using file ```wandb_env.py```
 
 ### Run Experiments
@@ -50,14 +50,14 @@ python main.py --config_file config/FISC/PACS/scheme-01/fl_0.1_cs-a-p.json
 ```
 
 ### Methods
-src/server.py and src/client.py contain the server side and client side method respectively. You could write your own server and client class as long as the interface with main.py is compatible. Or you can derive from our classes.
+src/server.py and src/client.py contain the server-side and client-side methods, respectively. You could write your own server and client class as long as the interface with main.py is compatible. Or you can derive from our classes.
 
 
 #### Server
-All our methods in the server side are derived from the FedAvg class. This is a basic class define the behaviour of the client management, model transmition and collection, data aggreagation, client sampling, etc. Please derive from FedAvg and include your method. For instance, if your method has a different aggregation rule than FedAvg, just derive from FedAvg and reimplement aggregate method.
+All our methods on the server side are derived from the FedAvg class. This is a basic class that defines the behaviour of the client management, model communication and collection, data aggregation, client sampling, etc. Please derive from FedAvg and include your method. For instance, if your method has a different aggregation rule than FedAvg, just derive from FedAvg and reimplement the aggregation method.
 
 #### Client
-All our methods in the client side are derived from the ERM class. fit method defines the overall training bewteen two communications. process_batch defines the pre-processing of one batch of data sample, and step defines one step of the objective updates. 
+All our methods on the client side are derived from the ERM class. `fit` method defines the overall training between two communications. process_batch defines the pre-processing of one batch of data samples, and step defines one step of the objective updates. 
 
 ### Acknowledgement
 [Benchmarking Algorithms for Domain Generalization in Federated Learning](https://github.com/inouye-lab/FedDG_Benchmark).
